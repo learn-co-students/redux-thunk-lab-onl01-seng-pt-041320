@@ -10,12 +10,22 @@ class App extends Component {
   }
   
   render() {
-    return (
-      <div>
-        <h1>CatBook</h1>
-        <CatList catPics={this.props.catPics} />
-      </div>
-    );
+
+    if (this.props.loading === false) {
+      return (
+        <div>
+          <h1>CatBook</h1>
+          <CatList catPics={this.props.catPics} />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h1>CatBook</h1>
+          <p>Loading</p>
+        </div>
+      )
+    }
   }
 }
 
